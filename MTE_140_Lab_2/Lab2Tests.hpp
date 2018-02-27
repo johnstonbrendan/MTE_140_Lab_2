@@ -41,10 +41,18 @@ public:
       DynamicStack stack(24);
       stack.push(10);
       stack.push(20);
-      ASSERT_TRUE(stack.peek() == 20)     
+      ASSERT_TRUE(stack.peek() == 20)
+      stack.print();
+      cout << endl << stack.peek() << endl;
+      system("pause");
       ASSERT_TRUE(stack.pop() == 20)
-      ASSERT_TRUE(stack.pop() == 10)     
+      stack.print();
+      system("pause");
+      ASSERT_TRUE(stack.pop() == 10)
+      stack.print();
+      system("pause");
       ASSERT_TRUE(stack.pop() == DynamicStack::EMPTY_STACK)
+      cout << endl << stack.peek() << endl;
       ASSERT_TRUE(stack.peek() == DynamicStack::EMPTY_STACK)
       return true;
     }
