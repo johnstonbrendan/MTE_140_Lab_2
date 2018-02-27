@@ -45,7 +45,7 @@ public:
     // Returns the number of items in the queue.
     int size() const;
     
-    // Rrints the queue items sequentially ordered from the front to the rear of
+    // Prints the queue items sequentially ordered from the front to the rear of
     // the queue.
     void print() const;
   
