@@ -14,7 +14,6 @@ public:
     static const QueueItem EMPTY_QUEUE;
 
     // Default constructor used to initialise the circular queue class.
-    // Default capacity is 16.
     CircularQueue();
     CircularQueue(unsigned int capacity);
   
@@ -45,7 +44,7 @@ public:
     // Returns the number of items in the queue.
     int size() const;
     
-    // Prints the queue items sequentially ordered from the front to the rear of
+    // Rrints the queue items sequentially ordered from the front to the rear of
     // the queue.
     void print() const;
   
