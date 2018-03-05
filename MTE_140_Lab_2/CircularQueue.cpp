@@ -98,18 +98,18 @@ QueueItem CircularQueue::peek() const
 
 void CircularQueue::print() const
 { //may need to change case for tail_ > head> has to print in other direction
-	if (head_ >= tail_)
-	{
-		for(int i = tail_; i < size_; i++)
-		{
-			std::cout << items_[i] << std::endl;
-		}
-	}
-	else
-	{
+//	if (head_ >= tail_)
+//	{
+//		for(int i = tail_; i < size_; i++)
+//		{
+//			std::cout << items_[i] << std::endl;
+//		}
+//	}
+//	else
+//	{
 		for (int i = head_; i < size_; i++)
 		{
-			std::cout << items_[i] << std::endl;
+			std::cout << items_[i%capacity_] << std::endl;
 		}
-	}
+//	}
 }
