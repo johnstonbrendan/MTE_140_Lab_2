@@ -11,7 +11,7 @@ DynamicStack::DynamicStack()
 	capacity_ = 16;
 	init_capacity_ = 16;
 	size_ = 0;
-	items_ = new StackItem[size_];
+	items_ = new StackItem[capacity_];
 }
 
 DynamicStack::DynamicStack(unsigned int capacity)
@@ -19,7 +19,7 @@ DynamicStack::DynamicStack(unsigned int capacity)
 	capacity_ = capacity;
 	init_capacity_ = capacity;
 	size_ = 0;
-	items_ = new StackItem[size_];
+	items_ = new StackItem[capacity_];
 }
 
 DynamicStack::~DynamicStack()
@@ -41,7 +41,16 @@ int DynamicStack::size() const
 void DynamicStack::push(StackItem value)
 {
 	if(size_ == capacity_)
+	{
 		capacity_ *= 2;
+		StackItem* temp = items_;
+		items_ = new StackItem[capacity_];
+		for (int i = 0; i < size_; i++)
+		{
+			items_[i] = temp[i];
+		}
+		delete [] temp;
+	}
 	items_[size_] = value;
 	size_ ++;
 }
@@ -50,13 +59,20 @@ StackItem DynamicStack::pop()
 {
 	if (size_ == 0)
 	{
-		std::cout << "Nothing to pop" << std::endl;
+//		std::cout << "Nothing to pop" << std::endl;
 		return EMPTY_STACK;
 	}
 	size_--;
 	if ((size_ <= 0.25* capacity_) && (0.5* capacity_ >= init_capacity_))
 	{
 		capacity_ *= 0.5;
+		StackItem* temp = items_;
+		items_ = new StackItem[capacity_];
+		for (int i = 0; i < size_ + 1; i++)
+		{
+			items_[i] = temp[i];
+		}
+		delete [] temp;
 	}
 	return items_[size_];
 

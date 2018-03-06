@@ -18,11 +18,11 @@ public:
 
       DynamicStack default_size_stack;
       ASSERT_TRUE(default_size_stack.empty() == true)
-      ASSERT_TRUE(default_size_stack.size() == 0)    
+      ASSERT_TRUE(default_size_stack.size() == 0)
 
       DynamicStack stack(size);
       ASSERT_TRUE(stack.empty() == true)
-      ASSERT_TRUE(stack.size() == 0)    
+      ASSERT_TRUE(stack.size() == 0)
       return true;
     }
 
@@ -31,10 +31,10 @@ public:
       DynamicStack stack;
       stack.push(10);
       ASSERT_TRUE(stack.empty() == false)
-      ASSERT_TRUE(stack.size() == 1)       
+      ASSERT_TRUE(stack.size() == 1)
       ASSERT_TRUE(stack.pop() == 10);
       ASSERT_TRUE(stack.empty() == true)
-      ASSERT_TRUE(stack.size() == 0)     
+      ASSERT_TRUE(stack.size() == 0)
       return true;
     }
 
@@ -43,9 +43,9 @@ public:
       DynamicStack stack(24);
       stack.push(10);
       stack.push(20);
-      ASSERT_TRUE(stack.peek() == 20)     
+      ASSERT_TRUE(stack.peek() == 20)
       ASSERT_TRUE(stack.pop() == 20)
-      ASSERT_TRUE(stack.pop() == 10)     
+      ASSERT_TRUE(stack.pop() == 10)
       ASSERT_TRUE(stack.pop() == DynamicStack::EMPTY_STACK)
       ASSERT_TRUE(stack.peek() == DynamicStack::EMPTY_STACK)
       return true;
@@ -63,7 +63,7 @@ public:
       ASSERT_TRUE(queue.full() == false)
       ASSERT_TRUE(queue.size() == 0)
       ASSERT_TRUE(queue.size_ == 0)
-      ASSERT_TRUE(queue.capacity_ == 16)     
+      ASSERT_TRUE(queue.capacity_ == 16)
       return true;
     }
 
@@ -86,7 +86,7 @@ public:
     {
       CircularQueue queue;
       ASSERT_TRUE(queue.enqueue(10) == true)
-      ASSERT_TRUE(queue.enqueue(20) == true)     
+      ASSERT_TRUE(queue.enqueue(20) == true)
       ASSERT_TRUE(queue.empty() == false)
       ASSERT_TRUE(queue.full() == false)
       ASSERT_TRUE(queue.size_ == 2)
@@ -101,9 +101,9 @@ public:
 //      return true;
       ASSERT_TRUE(queue.dequeue() == 20);
 //      return true;
-      ASSERT_TRUE(queue.peek() == CircularQueue::EMPTY_QUEUE);  
+      ASSERT_TRUE(queue.peek() == CircularQueue::EMPTY_QUEUE);
 //      return true;
-      ASSERT_TRUE(queue.dequeue() == CircularQueue::EMPTY_QUEUE);     
+      ASSERT_TRUE(queue.dequeue() == CircularQueue::EMPTY_QUEUE);
       ASSERT_TRUE(queue.empty() == true);
       ASSERT_TRUE(queue.size_ == 0)
       ASSERT_TRUE(queue.head_ == 2)

@@ -13,7 +13,7 @@ CircularQueue::CircularQueue()
 	tail_ = 0;
 	size_ = 0;
 	capacity_ = 16;
-	items_ = new QueueItem[size_];
+	items_ = new QueueItem[capacity_];
 
 }
 
@@ -26,7 +26,7 @@ CircularQueue::CircularQueue(unsigned int capacity)
 		capacity_ = 16;
 	else
 		capacity_ = capacity;
-	items_ = new QueueItem[size_];
+	items_ = new QueueItem[capacity_];
 }
 
 CircularQueue::~CircularQueue()
