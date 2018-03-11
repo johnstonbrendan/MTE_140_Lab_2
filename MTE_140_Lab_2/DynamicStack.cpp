@@ -16,6 +16,10 @@ DynamicStack::DynamicStack()
 
 DynamicStack::DynamicStack(unsigned int capacity)
 {
+	if (capacity == 0)
+	{
+		capacity = 16;
+	}
 	capacity_ = capacity;
 	init_capacity_ = capacity;
 	size_ = 0;
